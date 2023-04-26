@@ -1,0 +1,2 @@
+vhdtdtfi -lib work C:/xilinx/lab7/lab7_2/lab6_4verilog.v -lang verilog -prj lab7_2 -o lab6_4verilog.spl -module lab6_4verilog -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 lab6_4verilog.spl C:/xilinx/lab7/lab7_2/lab6_4verilog.sym 

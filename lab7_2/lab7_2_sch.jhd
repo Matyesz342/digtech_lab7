@@ -1,0 +1,5 @@
+MODULE lab7_2_sch
+	SUBMODULE lab5_3c_verilog
+		INSTANCE XLXI_8
+	SUBMODULE lab6_4verilog
+		INSTANCE XLXI_9

@@ -1,0 +1,7 @@
+net "a" loc = m13 | iostandard = lvcmos33;
+net "b" loc = r15 | iostandard = lvcmos33;
+net "cin" loc = r17 | iostandard = lvcmos33;
+net "sel<0>" loc = j15 | iostandard = lvcmos33;
+net "sel<1>" loc = l16 | iostandard = lvcmos33;
+net "r" loc = h17 | iostandard = lvcmos33;
+net "cout" loc = k15 | iostandard = lvcmos33;

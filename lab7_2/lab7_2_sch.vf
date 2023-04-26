@@ -1,0 +1,66 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : lab7_2_sch.vf
+// /___/   /\     Timestamp : 04/26/2023 10:36:40
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family artix7 -verilog C:/xilinx/lab7/lab7_2/lab7_2_sch.vf -w C:/xilinx/lab7/lab7_2/lab7_2_sch.sch
+//Design Name: lab7_2_sch
+//Device: artix7
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module lab7_2_sch(a, 
+                  b, 
+                  cin, 
+                  sel, 
+                  cout, 
+                  r);
+
+    input a;
+    input b;
+    input cin;
+    input [1:0] sel;
+   output cout;
+   output r;
+   
+   wire XLXN_8;
+   wire XLXN_9;
+   wire XLXN_16;
+   wire XLXN_20;
+   wire XLXN_23;
+   
+   AND2  XLXI_3 (.I0(a), 
+                .I1(b), 
+                .O(XLXN_9));
+   OR2  XLXI_4 (.I0(a), 
+               .I1(b), 
+               .O(XLXN_8));
+   OR2  XLXI_5 (.I0(cin), 
+               .I1(sel[0]), 
+               .O(XLXN_20));
+   XOR2  XLXI_6 (.I0(sel[0]), 
+                .I1(b), 
+                .O(XLXN_16));
+   lab5_3c_verilog  XLXI_8 (.in0(XLXN_9), 
+                           .in1(XLXN_8), 
+                           .in2(XLXN_23), 
+                           .in3(XLXN_23), 
+                           .sel(sel[1:0]), 
+                           .r(r));
+   lab6_4verilog  XLXI_9 (.a(a), 
+                         .b(XLXN_16), 
+                         .cin(XLXN_20), 
+                         .cout(cout), 
+                         .s(XLXN_23));
+endmodule

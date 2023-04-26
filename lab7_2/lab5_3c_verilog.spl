@@ -1,0 +1,12 @@
+[Inputs]
+in0
+in1
+in2
+in3
+=sel[1:0]=
+[Outputs]
+r
+[BiDir]
+[ATTRIBUTES]
+VeriModel lab5_3c_verilog
+

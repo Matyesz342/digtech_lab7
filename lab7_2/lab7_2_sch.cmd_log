@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "C:/xilinx/lab7/lab7_2/lab7_2_sch.xst" -ofn "C:/xilinx/lab7/lab7_2/lab7_2_sch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab7_2_ucf.ucf -p xc7a100t-csg324-3 lab7_2_sch.ngc lab7_2_sch.ngd  
+xst -intstyle ise -ifn "C:/xilinx/lab7/lab7_2/lab7_2_sch.xst" -ofn "C:/xilinx/lab7/lab7_2/lab7_2_sch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab7_2_ucf.ucf -p xc7a100t-csg324-3 lab7_2_sch.ngc lab7_2_sch.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o lab7_2_sch_map.ncd lab7_2_sch.ngd lab7_2_sch.pcf 
+par -w -intstyle ise -ol high -mt off lab7_2_sch_map.ncd lab7_2_sch.ncd lab7_2_sch.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml lab7_2_sch.twx lab7_2_sch.ncd -o lab7_2_sch.twr lab7_2_sch.pcf -ucf lab7_2_ucf.ucf 
+xst -intstyle ise -ifn "C:/xilinx/lab7/lab7_2/lab7_2_sch.xst" -ofn "C:/xilinx/lab7/lab7_2/lab7_2_sch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab7_2_ucf.ucf -p xc7a100t-csg324-3 lab7_2_sch.ngc lab7_2_sch.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o lab7_2_sch_map.ncd lab7_2_sch.ngd lab7_2_sch.pcf 
+par -w -intstyle ise -ol high -mt off lab7_2_sch_map.ncd lab7_2_sch.ncd lab7_2_sch.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml lab7_2_sch.twx lab7_2_sch.ncd -o lab7_2_sch.twr lab7_2_sch.pcf -ucf lab7_2_ucf.ucf 
+bitgen -intstyle ise -f lab7_2_sch.ut lab7_2_sch.ncd 
