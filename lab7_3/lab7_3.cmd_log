@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/xilinx/lab7/lab7_3/lab7_3.xst" -ofn "C:/xilinx/lab7/lab7_3/lab7_3.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lab7_3.ucf -p xc7a100t-csg324-3 lab7_3.ngc lab7_3.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o lab7_3_map.ncd lab7_3.ngd lab7_3.pcf 
+par -w -intstyle ise -ol high -mt off lab7_3_map.ncd lab7_3.ncd lab7_3.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml lab7_3.twx lab7_3.ncd -o lab7_3.twr lab7_3.pcf -ucf lab7_3.ucf 
+bitgen -intstyle ise -f lab7_3.ut lab7_3.ncd 
